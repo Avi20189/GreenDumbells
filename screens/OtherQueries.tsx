@@ -1,5 +1,4 @@
 import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
-import CheckBox from 'react-native-check-box';
 import { Button, Text } from "galio-framework";
 import { View } from '../components/Themed';
 import { useNavigation } from '@react-navigation/core';
@@ -17,13 +16,14 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   OverlayContainer: {
-    flex: 1 / 2.3,
+    flex: 1,
     backgroundColor: 'white',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     //justifyContent: 'space-evenly',
   },
   TextStyle: {
+    fontSize: 18,
     marginTop: 5,
     //lineHeight: 12,
     marginRight: '10%',
@@ -31,20 +31,28 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   TextStyle1: {
-    marginRight: '10%',
+    marginTop: 50,
+    //lineHeight: 20,
+    //marginRight: '10%',
     marginLeft: '10%',
-    textAlign: 'center',
+    //textAlign: 'center'
   },
   NameStyle: {
     flexDirection: "row"
   },
   input1: {
-    height: 40,
-    margin: 12,
+    height: 85,
+    width: 190,
+    marginLeft: 110,
     borderWidth: 1,
-    padding: 10,
+    marginTop: 50,
+    padding: 20,
+    borderColor: "#76E606",
+    borderRadius: 15,
+    textAlign: "center"
   },
   ActionBtn: {
+      margin:320,
     alignSelf: "center"
   }
 });
@@ -53,35 +61,40 @@ const SignUpSignIn = () => {
   const navigation = useNavigation();
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [isSelected, setSelection] = useState(false);
+
 
   return (
     <ImageBackground
-      source={require('../assets/images/SignIn.jpg')}
+      source={require('../assets/images/SignUp.jpg')}
       style={styles.LogoStyle}>
 
       <View style={styles.OverlayContainer}>
-        <Text style={styles.TextStyle1} color="black" size={25} >Login with your </Text>
-        <Text style={styles.TextStyle} color="black" size = {30} >GREEN DUMBELLS </Text>
-        <Text style={styles.TextStyle} color="black" size = {25} >account.</Text>
+        <Text style={styles.TextStyle1} color="black" size={25} >Do you want to request a consulation for your other queries ?</Text>
+        <View
+          style={{
+            borderBottomColor: 'grey',
+            marginTop: 15,
+            borderBottomWidth: StyleSheet.hairlineWidth,
+          }}>
+        </View>
         <SafeAreaView>
+
           <TextInput
-            style={styles.input1}
-            placeholder="Email / Mobile"
-            onChangeText={setEmail}
-            value={email}
-          />
-          <TextInput
-            style={styles.input1}
-            placeholder="Password"
-            onChangeText={setPassword}
-            value={password}
-          />
-          <Button onPress={() => navigation.navigate('SIGNIN')}
+              style={styles.input1}
+              placeholder="Yes"
+              onChangeText={setFirstName}
+              value={firstName}
+            />
+                      <TextInput
+              style={styles.input1}
+              placeholder="No"
+              onChangeText={setLastName}
+              value={lastName}
+            />
+
+          <Button onPress={() => navigation.navigate('HOMESCREEN')}
             style={styles.ActionBtn} color="success" round size="small">
-            Sign In
+            Next
            </Button>
         </SafeAreaView>
       </View>

@@ -1,12 +1,7 @@
-import { StyleSheet, Image, ImageBackground } from 'react-native';
-import { Block, Button, Text, theme } from "galio-framework";
+import { StyleSheet, ImageBackground } from 'react-native';
+import { Button, Text } from "galio-framework";
 import { View } from '../components/Themed';
-import {useNavigation} from '@react-navigation/core';
-import DemoPic2 from './DemoScreenTwo';
-import SignUp from './SignUp';
-import SignIn from './SignIn';
-
-
+import { useNavigation } from '@react-navigation/core';
 
 const styles = StyleSheet.create({
   LogoStyle: {
@@ -17,7 +12,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   OverlayContainer: {
-    flex: 1 / 2.5,
+    flex: 1 / 3,
     backgroundColor: 'white',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
@@ -36,28 +31,24 @@ const styles = StyleSheet.create({
   }
 });
 
-const SignUpSignIn = () => {
+const DemoScreenTwo = () => {
   const navigation = useNavigation();
 
   return (
     <ImageBackground
-      source={require('../assets/images/SignUp.jpg')}
+      source={require('../assets/images/DemoPic3.jpg')}
       style={styles.LogoStyle}>
 
       <View style={styles.OverlayContainer}>
-        <Text style={styles.TextStyle} color="black" size={18} >Get started with our affordable plans especially tailored for you </Text>
-        <Button onPress={() => navigation.navigate('SIGNUP')}
+        <Text style={styles.TextStyle} color="black" size={18} >Choose a suitable workout regime from our database and start tracking your performance </Text>
+        <Button onPress={() => navigation.navigate('DEMO_THREE')}
           style={styles.ActionBtn} color="success" round size="small">
-          Sign Up
-           </Button>
-           <Button onPress={() => navigation.navigate('SIGNIN')}
-          style={styles.ActionBtn} color="success" round size="small">
-          Sign In
+          Next
            </Button>
       </View>
     </ImageBackground>
   );
 }
 
-export default SignUpSignIn;
+export default DemoScreenTwo;
 

@@ -1,5 +1,4 @@
 import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
-import CheckBox from 'react-native-check-box';
 import { Button, Text } from "galio-framework";
 import { View } from '../components/Themed';
 import { useNavigation } from '@react-navigation/core';
@@ -34,9 +33,9 @@ const styles = StyleSheet.create({
   TextStyle1: {
     marginTop: 50,
     //lineHeight: 20,
-    marginRight: '20%',
+    marginRight: '10%',
     marginLeft: '10%',
-    textAlign: 'center'
+    //textAlign: 'center'
   },
   NameStyle: {
     flexDirection: "row"
@@ -55,12 +54,15 @@ const styles = StyleSheet.create({
   },
 
   input1: {
-    height: 45,
-    margin: 12,
+    height: 85,
+    width: 190,
+    marginLeft: 110,
     borderWidth: 1,
-    padding: 10,
+    marginTop: 50,
+    padding: 20,
     borderColor: "#76E606",
-    borderRadius: 10
+    borderRadius: 15,
+    textAlign: "center"
   },
   input2: {
     height: 45,
@@ -70,12 +72,12 @@ const styles = StyleSheet.create({
     padding: 10,
     marginLeft: 15,
     textAlign: 'center',
-    borderRadius: 13,
+    borderRadius: 20,
     borderColor: "#76E606"
 
   },
   ActionBtn: {
-      margin:450,
+      margin:210,
     alignSelf: "center"
   }
 });
@@ -84,9 +86,8 @@ const SignUpSignIn = () => {
   const navigation = useNavigation();
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
-  const [number, setNumber] = React.useState("");
-  const [height, setHeight] = React.useState("");
-  const [weight, setWeight] = React.useState("");
+  const [diet, setDiet] = React.useState("");
+
 
   return (
     <ImageBackground
@@ -94,7 +95,7 @@ const SignUpSignIn = () => {
       style={styles.LogoStyle}>
 
       <View style={styles.OverlayContainer}>
-        <Text style={styles.TextStyle1} color="black" size={30} >Basic physical profile</Text>
+        <Text style={styles.TextStyle1} color="black" size={25} >What part of your body you would like to target ?</Text>
         <View
           style={{
             borderBottomColor: 'grey',
@@ -103,42 +104,27 @@ const SignUpSignIn = () => {
           }}>
         </View>
         <SafeAreaView>
-          <View style = {styles.NameStyle}>
-            <TextInput
-              style={styles.input}
-              placeholder="Male"
+
+          <TextInput
+              style={styles.input1}
+              placeholder="Upper Body"
               onChangeText={setFirstName}
               value={firstName}
             />
-            <TextInput
-              style={styles.input}
-              placeholder="Female"
-              onChangeText={setNumber}
-              value={number}
-            />
-          </View>
-          <TextInput
+                      <TextInput
               style={styles.input1}
-              placeholder="Age"
+              placeholder="Mid Body"
               onChangeText={setLastName}
               value={lastName}
             />
-                      <View style = {styles.NameStyle}>
-            <TextInput
-              style={styles.input2}
-              placeholder="Height"
-              onChangeText={setHeight}
-              value={height}
+                      <TextInput
+              style={styles.input1}
+              placeholder="Lower Body"
+              onChangeText={setDiet}
+              value={diet}
             />
-            <TextInput
-              style={styles.input2}
-              placeholder="Weight"
-              onChangeText={setWeight}
-              value={weight}
-            />
-          </View>
 
-          <Button onPress={() => navigation.navigate('DIETERYPREFERENCE')}
+          <Button onPress={() => navigation.navigate('HEALTHISSUE')}
             style={styles.ActionBtn} color="success" round size="small">
             Next
            </Button>
