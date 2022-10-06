@@ -4,7 +4,7 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import Logo from '../assets/images/Logo.jpg';
-import Exercise from './Exercise';
+import Exercise from './ExercisePlan';
 import { createNavigationContainerRef } from '@react-navigation/native';
 import { NavigationContainer } from '@react-navigation/native';
 import React, { useEffect } from 'react';

@@ -17,71 +17,97 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   OverlayContainer: {
-    flex: 1 / 2.3,
+    flex: 1 / 2.8,
     backgroundColor: 'white',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     //justifyContent: 'space-evenly',
   },
   TextStyle: {
+    fontSize: 19,
     marginTop: 5,
     //lineHeight: 12,
     marginRight: '10%',
     marginLeft: '10%',
     textAlign: 'center'
   },
-  TextStyle1: {
-    marginRight: '10%',
-    marginLeft: '10%',
-    textAlign: 'center',
-  },
-  NameStyle: {
-    flexDirection: "row"
-  },
-  input1: {
+  input: {
     height: 40,
+    width: 180,
     margin: 12,
     borderWidth: 1,
     padding: 10,
   },
+  input1: {
+    height: 40,
+    margin: 12,
+    marginTop: 30,
+    borderWidth: 1,
+    padding: 10,
+  },
   ActionBtn: {
-    alignSelf: "center"
+    alignSelf: "center",
+    marginTop: 50
   }
 });
 
 const SignUpSignIn = () => {
   const navigation = useNavigation();
-  const [firstName, setFirstName] = React.useState("");
-  const [lastName, setLastName] = React.useState("");
+
   const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [isSelected, setSelection] = useState(false);
 
   return (
     <ImageBackground
-      source={require('../assets/images/SignIn.jpg')}
+      source={require('../assets/images/SignUp.jpg')}
       style={styles.LogoStyle}>
 
       <View style={styles.OverlayContainer}>
-        <Text style={styles.TextStyle1} color="black" size={25} >Login with your </Text>
-        <Text style={styles.TextStyle} color="black" size = {30} >GREEN DUMBELLS </Text>
-        <Text style={styles.TextStyle} color="black" size = {25} >account.</Text>
+        <Text style={styles.TextStyle} color="black" size = {25} >Otp has been sent to your registered mobile number </Text>
+        <View
+          style={{
+            borderBottomColor: 'grey',
+            marginTop: 15,
+            borderBottomWidth: StyleSheet.hairlineWidth,
+          }}>
+        </View>
         <SafeAreaView>
-          <TextInput
+          {/* <View style = {styles.NameStyle}>
+            <TextInput
+              style={styles.input}
+              placeholder="First Name"
+              onChangeText={setFirstName}
+              value={firstName}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Last Name"
+              onChangeText={setLastName}
+              value={lastName}
+            />
+          </View> */}
+           <TextInput
             style={styles.input1}
-            placeholder="Mobile"
+            placeholder="Enter Otp"
             onChangeText={setEmail}
             value={email}
           />
-          <TextInput
+          {/* <TextInput
             style={styles.input1}
-            placeholder="Otp"
+            placeholder="Password"
             onChangeText={setPassword}
             value={password}
           />
-          <Button onPress={() => navigation.navigate('SIGNIN')}
+          <TextInput
+            style={styles.input1}
+            placeholder="Confirm Password"
+            onChangeText={setPassword}
+            value={password}
+          />  */}
+    
+
+          <Button onPress={() => navigation.navigate('PROFILEDETAILS')}
             style={styles.ActionBtn} color="success" round size="small">
-            Sign In
+            Join In
            </Button>
         </SafeAreaView>
       </View>

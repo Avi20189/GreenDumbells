@@ -16,7 +16,7 @@ import DemoScreenOne from './screens/DemoScreenOne';
 import DemoScreenTwo from './screens/DemoScreenTwo';
 import DemoScreenThree from './screens/DemoScreenThree';
 import DieteryPreference from './screens/DieteryPreference';
-import Exercise from './screens/Exercise';
+import ExercisePlan from './screens/ExercisePlan';
 import FitnessLevel from './screens/FitnessLevel';
 import HealthIssue from './screens/HealthIssue';
 import LanguageChoose from './screens/LanguageChoose';
@@ -32,12 +32,33 @@ import LetUsKnowYouBetter from './screens/LetUsKnowYouBetter';
 import TargetBody from './screens/TargetBody';
 import OtherQueries from './screens/OtherQueries';
 import HomeScreen from './screens/HomeScreen';
+import Otp from './screens/Otp';
+import ProfileDetails from './screens/ProfileDetails';
+import DietPlan from './screens/DietPlan';
+import ExerciseDetails from './screens/ExerciseDetails';
+import Warmup from './screens/Warmup';
+import Shoulders from './screens/Shoulders';
+import Chest from './screens/Chest';
+import Abs from './screens/Abs';
+import Arms from './screens/Arms';
+import Glutes from './screens/Glutes';
+import Legs from './screens/Legs';
+import Stretching from './screens/Stretching';
+import MyDairy from './screens/MyDairy';
+import Consultation from './screens/Consultation';
+import Help from './screens/Help';
+import MYDAIRYNEXT from './screens/MyDairyNext';
+import WORKOUTLOG from './screens/WorkoutLog';
+
+
 
 
 import { createNavigationContainerRef } from '@react-navigation/native';
 import { Block, Button, Text, theme } from "galio-framework";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import 'react-native-gesture-handler';
+import MyDairyNext from './screens/MyDairyNext';
+import WorkoutLog from './screens/WorkoutLog';
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -111,8 +132,27 @@ const authScreen = {
   ALLERGYFOOD: {component: AllergyFood, options: {}},
   OTHERQUERIES: {component: OtherQueries, options: {}},
   HOMESCREEN: {component: HomeScreen, options: {}},
-  
-  
+  OTP: {component: Otp, options: {}},
+  PROFILEDETAILS: {component: ProfileDetails, options: {}},
+  LOGOSCREEN: {component: LogoScreen, options: {}},
+  DIETPLAN: {component: DietPlan, options: {}},
+  EXERCISEPLAN: {component: ExercisePlan, options: {}},
+  EXERCISEDETAILS: {component: ExerciseDetails, options: {}},
+  WARMUP: {component: Warmup, options: {}},
+  SHOULDERS: {component: Shoulders, options: {}},
+  CHEST: {component: Chest, options: {}},
+  ABS: {component: Abs, options: {}},
+  ARMS: {component: Arms, options: {}},
+  GLUTES: {component: Glutes, options: {}},
+  LEGS: {component: Legs, options: {}},
+  STRETCHING: {component: Stretching, options: {}},
+  MYDAIRY: {component: MyDairy, options: {}},
+  CONSULTATION: {component: Consultation, options: {}},
+  HELP: {component: Help, options: {}},
+  MYDAIRYNEXT: {component: MyDairyNext, options: {}},
+  WORKOUTLOG: {component: WorkoutLog, options: {}},
+
+
 }
 
 function AppNavigation() {

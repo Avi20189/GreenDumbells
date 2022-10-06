@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   OverlayContainer: {
-    flex: 1 / 1.5,
+    flex: 1 / 2.8,
     backgroundColor: 'white',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
@@ -86,7 +86,7 @@ const SignUpSignIn = () => {
 
       <View style={styles.OverlayContainer}>
         <Text style={styles.TextStyle1} color="black" size={30} >Sign Up </Text>
-        <Text style={styles.TextStyle} color="black" >please fill in this form to get started </Text>
+        <Text style={styles.TextStyle} color="black" >please enter your mobile number to get started </Text>
         <View
           style={{
             borderBottomColor: 'grey',
@@ -95,7 +95,7 @@ const SignUpSignIn = () => {
           }}>
         </View>
         <SafeAreaView>
-          <View style = {styles.NameStyle}>
+          {/* <View style = {styles.NameStyle}>
             <TextInput
               style={styles.input}
               placeholder="First Name"
@@ -108,25 +108,13 @@ const SignUpSignIn = () => {
               onChangeText={setLastName}
               value={lastName}
             />
-          </View>
+          </View> */}
            <TextInput
             style={styles.input1}
-            placeholder="Email"
+            placeholder="Mobile No."
             onChangeText={setEmail}
             value={email}
           />
-          <TextInput
-            style={styles.input1}
-            placeholder="Password"
-            onChangeText={setPassword}
-            value={password}
-          />
-          <TextInput
-            style={styles.input1}
-            placeholder="Confirm Password"
-            onChangeText={setPassword}
-            value={password}
-          /> 
           <View style={styles.checkboxContainer}>
             <CheckBox
               value={isSelected}
@@ -136,7 +124,7 @@ const SignUpSignIn = () => {
             <Text style={styles.label} color="black" >I accept term of use & privacy policy </Text>
           </View>
 
-          <Button onPress={() => navigation.navigate('CLIENTDETAILSORHOME')}
+          <Button onPress={() => navigation.navigate('OTP')}
             style={styles.ActionBtn} color="success" round size="small">
             Join In
            </Button>

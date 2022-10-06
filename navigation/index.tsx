@@ -19,7 +19,7 @@ import DemoPic from '../screens/Trackers';
 
 import DemoPic1 from '../screens/Trackers';
 import PushNotifications from '../screens/PushNotifications';
-import Exercise from '../screens/Exercise';
+import Exercise from '../screens/ExercisePlan';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import { Stylesheet, Text, View, Statusbar, Image } from 'react-native';

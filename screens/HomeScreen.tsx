@@ -5,6 +5,12 @@ import { View } from '../components/Themed';
 import { useNavigation } from '@react-navigation/core';
 import { TextInput } from 'react-native-gesture-handler';
 import React, { useState } from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import LogoScreen from './LogoScreen';
+import Trackers from './Trackers';
+import ExerciseRecord from './ExerciseRecord';
+import PushNotifications from './PushNotifications';
+import Exercise from './ExercisePlan';
 
 
 
@@ -15,12 +21,13 @@ const styles = StyleSheet.create({
     height: '100%',
     overflow: "hidden",
     justifyContent: 'flex-end',
+    backgroundColor: 'white'
   },
   OverlayContainer: {
-    flex: 1 / 2.3,
-    backgroundColor: 'white',
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
+    flex: 1 / 8.8,
+    backgroundColor: '#76E606',
+    borderTopLeftRadius: 55,
+    borderTopRightRadius: 55,
     //justifyContent: 'space-evenly',
   },
   TextStyle: {
@@ -46,16 +53,33 @@ const styles = StyleSheet.create({
   },
   ActionBtn: {
     alignSelf: "center"
+  },
+  iconStyle: {
+    flexDirection: 'row'
   }
 });
 
+const BottomTabs = createBottomTabNavigator();
+const AppStart = () => {
+  return (
+
+    <>
+      <BottomTabs.Navigator initialRouteName="profile"
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <BottomTabs.Screen name="profile" component={LogoScreen} />
+        <BottomTabs.Screen name="Tracker" component={Trackers} />
+        <BottomTabs.Screen name="Record" component={ExerciseRecord} />
+        <BottomTabs.Screen name="Notifications" component={PushNotifications} />
+        <BottomTabs.Screen name="Exercise" component={Exercise} />
+      </BottomTabs.Navigator>
+    </>
+  );
+}
+
 const SignUpSignIn = () => {
   const navigation = useNavigation();
-  const [firstName, setFirstName] = React.useState("");
-  const [lastName, setLastName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [isSelected, setSelection] = useState(false);
 
   return (
     <ImageBackground
@@ -63,30 +87,35 @@ const SignUpSignIn = () => {
       style={styles.LogoStyle}>
 
       <View style={styles.OverlayContainer}>
-        <Text style={styles.TextStyle1} color="black" size={25} >Login with your </Text>
-        <Text style={styles.TextStyle} color="black" size = {30} >GREEN DUMBELLS </Text>
-        <Text style={styles.TextStyle} color="black" size = {25} >account.</Text>
-        <SafeAreaView>
-          <TextInput
-            style={styles.input1}
-            placeholder="Email / Mobile"
-            onChangeText={setEmail}
-            value={email}
-          />
-          <TextInput
-            style={styles.input1}
-            placeholder="Password"
-            onChangeText={setPassword}
-            value={password}
-          />
-          <Button onPress={() => navigation.navigate('SIGNIN')}
-            style={styles.ActionBtn} color="success" round size="small">
-            Sign In
-           </Button>
-        </SafeAreaView>
+        <Text>Hello</Text>
       </View>
-
+      <Button onPress={() => navigation.navigate('DIETPLAN')}
+            style={styles.ActionBtn} color="success" round size="small">
+            DietPlan
+           </Button>
+           <Button onPress={() => navigation.navigate('EXERCISEPLAN')}
+            style={styles.ActionBtn} color="success" round size="small">
+            Exercise plan
+           </Button>
+           <Button onPress={() => navigation.navigate('MYDAIRY')}
+            style={styles.ActionBtn} color="success" round size="small">
+            My Dairy
+           </Button>
+           <Button onPress={() => navigation.navigate('CONSULTATION')}
+            style={styles.ActionBtn} color="success" round size="small">
+           Consultation
+           </Button>           
+           <Button onPress={() => navigation.navigate('HELP')}
+            style={styles.ActionBtn} color="success" round size="small">
+            Help
+           </Button>
+           <Button onPress={() => navigation.navigate('MYDAIRYNEXT')}
+            style={styles.ActionBtn} color="success" round size="small">
+           My Dairy Next
+           </Button>
     </ImageBackground>
+
+ 
 
   );
 }
