@@ -20,11 +20,19 @@ const styles = StyleSheet.create({
   },
   TextStyle: {
     fontSize: 18,
-    marginTop: 10,
-    lineHeight: 250,
+    marginTop: 40,
+    //lineHeight: 250,
     marginRight: '10%',
     marginLeft: '10%',
-    textAlign: 'center'
+   // textAlign: 'center'
+  },
+  TextStyle1: {
+    fontSize: 18,
+    marginTop: 5,
+    //lineHeight: 250,
+    marginRight: '10%',
+    marginLeft: '10%',
+   // textAlign: 'center'
   },
   ActionBtn: {
     alignSelf: "center"
@@ -38,16 +46,18 @@ const LanguageChoose = () => {
     // <ImageBackground source={require('../assets/images/Logo.jpg')} style={styles.LogoStyle}>
       <View style={styles.OverlayContainer}>
           <Text style = {styles.TextStyle}>Choose your preferred Language</Text>
-        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="black" round size="small"> Next </Button>
-        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> Next </Button>
-        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> Next </Button>
-        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> Next </Button>
-        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> Next </Button>
-        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> Next </Button>
-        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> Next </Button>
-        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> Next </Button>
-        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> Next </Button>
-        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> Next </Button>
+          <Text style = {styles.TextStyle1}> Language </Text>
+
+        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="black" round size="small"> हिन्दी </Button>
+        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> English </Button>
+        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> ଓଡ଼ିଆ </Button>
+        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> मराठी </Button>
+        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> தமிழ் </Button>
+        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> తెలుగు </Button>
+        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> ಕನ್ನಡ  </Button>
+        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> മലയാളം </Button>
+        <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> ગુજરાતી  </Button>
+
       </View>
     // </ImageBackground>
   );

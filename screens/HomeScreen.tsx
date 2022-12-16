@@ -24,10 +24,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   OverlayContainer: {
-    flex: 1 / 8.8,
-    backgroundColor: '#76E606',
-    borderTopLeftRadius: 55,
-    borderTopRightRadius: 55,
+    flex: 1/3.5,
+    bottom: 300,
+    backgroundColor: 'white',
+    //borderTopLeftRadius: 55,
+    //borderTopRightRadius: 55,
     //justifyContent: 'space-evenly',
   },
   TextStyle: {
@@ -43,7 +44,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   NameStyle: {
-    flexDirection: "row"
+    alignSelf: 'center',
+
+
   },
   input1: {
     height: 40,
@@ -52,11 +55,20 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   ActionBtn: {
-    alignSelf: "center"
+    height: 88,
+    width:  88,
+    borderRadius: 88,
+    marginLeft: 20,    
   },
   iconStyle: {
     flexDirection: 'row'
-  }
+  },
+ViewStyle: {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'flex-start',
+  
+},
 });
 
 const BottomTabs = createBottomTabNavigator();
@@ -82,40 +94,60 @@ const SignUpSignIn = () => {
   const navigation = useNavigation();
 
   return (
+<>
+    <View style={styles.OverlayContainer}>
+    <Text style = {styles.NameStyle}>Wellbeing</Text>
+  </View>
     <ImageBackground
       source={require('../assets/images/SignIn.jpg')}
       style={styles.LogoStyle}>
-
-      <View style={styles.OverlayContainer}>
-        <Text>Hello</Text>
-      </View>
-      <Button onPress={() => navigation.navigate('DIETPLAN')}
+     <View>
+      <View style = {styles.ViewStyle}>
+           <Button onPress={() => navigation.navigate('DIETPLAN')}
             style={styles.ActionBtn} color="success" round size="small">
-            DietPlan
            </Button>
-           <Button onPress={() => navigation.navigate('EXERCISEPLAN')}
+           <Text style = {styles.NameStyle}>Diet Plans</Text> 
+           </View>
+           <View style = {styles.ViewStyle}>
+           <Button onPress={() => navigation.navigate('FITNESS PLAN')}
             style={styles.ActionBtn} color="success" round size="small">
-            Exercise plan
+            Fitness plan
            </Button>
+           <Text style = {styles.NameStyle}>Fitness Plan</Text> 
+           </View>
+           <View style = {styles.ViewStyle}>
            <Button onPress={() => navigation.navigate('MYDAIRY')}
             style={styles.ActionBtn} color="success" round size="small">
             My Dairy
            </Button>
+           <Text style = {styles.NameStyle}>My Dairy</Text> 
+           </View>
+           <View style = {styles.ViewStyle}>
            <Button onPress={() => navigation.navigate('CONSULTATION')}
             style={styles.ActionBtn} color="success" round size="small">
            Consultation
-           </Button>           
-           <Button onPress={() => navigation.navigate('HELP')}
+           </Button>  
+           <Text style = {styles.NameStyle}>Consulatation</Text> 
+           </View>
+           <View style = {styles.ViewStyle}>         
+           <Button onPress={() => navigation.navigate('LIVE')}
             style={styles.ActionBtn} color="success" round size="small">
-            Help
+            My Shopping Cart
            </Button>
+           <Text style = {styles.NameStyle}>My Shopping Cart</Text> 
+           </View>
+           <View style = {styles.ViewStyle}>
            <Button onPress={() => navigation.navigate('MYDAIRYNEXT')}
             style={styles.ActionBtn} color="success" round size="small">
-           My Dairy Next
+            Live
            </Button>
+           <Text style = {styles.NameStyle}>Live</Text> 
+           </View>
+           </View>
     </ImageBackground>
+    
 
- 
+    </>
 
   );
 }

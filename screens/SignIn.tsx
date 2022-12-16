@@ -79,7 +79,7 @@ const SignUpSignIn = () => {
             onChangeText={setPassword}
             value={password}
           />
-          <Button onPress={() => navigation.navigate('SIGNIN')}
+          <Button onPress={() => navigation.navigate('PHYSICALDETAILS')}
             style={styles.ActionBtn} color="success" round size="small">
             Sign In
            </Button>
