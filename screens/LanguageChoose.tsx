@@ -46,7 +46,7 @@ const LanguageChoose = () => {
     // <ImageBackground source={require('../assets/images/Logo.jpg')} style={styles.LogoStyle}>
       <View style={styles.OverlayContainer}>
           <Text style = {styles.TextStyle}>Choose your preferred Language</Text>
-          <Text style = {styles.TextStyle1}> Language </Text>
+          {/* <Text style = {styles.TextStyle1}> Language </Text> */}
 
         <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="black" round size="small"> हिन्दी </Button>
         <Button onPress={() => navigation.navigate('DEMO_ONE')} style={styles.ActionBtn} color="success" round size="small"> English </Button>

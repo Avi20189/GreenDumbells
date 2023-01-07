@@ -52,6 +52,19 @@ const styles = StyleSheet.create({
     borderColor: "#76E606"
 
   },
+  input1: {
+    height: 50,
+    width: 180,
+    color: 'green',
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    marginLeft: 10,
+    textAlign: 'center',
+    borderRadius: 13,
+    borderColor: "black"
+
+  },
 
   NameStyle: {
     flexDirection: "row"
@@ -86,8 +99,8 @@ const SignUpSignIn = () => {
         <SafeAreaView>
 
         <View style = {styles.NameStyle}>
-            <TextInput
-              style={styles.input}
+            <Button
+              style={styles.input1}
               placeholder="PCOD/PCOS"
               onChangeText={setFirstName}
               value={firstName}
